@@ -89,7 +89,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.openfaas.template.java</groupId>
+			<groupId>com.github.kameshchauhan.openfaas.java</groupId>
 			<artifactId>model</artifactId>
 			<version>1.0.0</version>
 		</dependency>
