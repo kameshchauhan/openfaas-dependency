@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 
 import java.util.Map;
 
-import com.github.kameshchauhan.openfaas.java.model.Request;
+import com.github.kameshchauhan.openfaas.model.Request;
 public class RequestTest {
 
 	@Test

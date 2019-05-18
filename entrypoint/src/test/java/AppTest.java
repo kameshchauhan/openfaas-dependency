@@ -1,7 +1,7 @@
 // Copyright (c) OpenFaaS Author(s) 2018. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import com.openfaas.entrypoint.App;
+import com.github.kameshchauhan.openfaas.entrypoint.App;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -39,7 +39,7 @@ import java.net.URL;
 
              Assert.assertEquals(200,responseCode);
              Assert.assertEquals("OK", responseMessage);
-             Assert.assertEquals("Hello, World, Kamesh!", actualGreeting);
+             Assert.assertEquals("Hello, World!", actualGreeting);
 
          }catch(Exception e){
             e.printStackTrace();

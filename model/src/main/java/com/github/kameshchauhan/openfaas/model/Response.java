@@ -1,7 +1,7 @@
 // Copyright (c) OpenFaaS Author(s) 2018. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-package com.github.kameshchauhan.openfaas.java.model;
+package com.github.kameshchauhan.openfaas.model;
 
 import java.util.HashMap;
 import java.util.Map;

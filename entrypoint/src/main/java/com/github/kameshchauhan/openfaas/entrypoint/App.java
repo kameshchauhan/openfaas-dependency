@@ -1,12 +1,13 @@
 // Copyright (c) OpenFaaS Author(s) 2018. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-package com.openfaas.entrypoint;
+package com.github.kameshchauhan.openfaas.entrypoint;
 
-import com.openfaas.model.IHandler;
-import com.openfaas.model.IRequest;
-import com.openfaas.model.IResponse;
-import com.openfaas.model.Request;
+
+import com.github.kameshchauhan.openfaas.model.IHandler;
+import com.github.kameshchauhan.openfaas.model.IRequest;
+import com.github.kameshchauhan.openfaas.model.IResponse;
+import com.github.kameshchauhan.openfaas.model.Request;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -33,7 +34,7 @@ public class App {
     private static void createServer() throws IOException {
         int port = 8082;
 
-        IHandler handler = new com.openfaas.function.Handler();
+        IHandler handler = new com.github.kameshchauhan.openfaas.function.Handler();
 
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         InvokeHandler invokeHandler = new InvokeHandler(handler);
