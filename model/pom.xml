@@ -16,7 +16,7 @@
 
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>A data model dependency for OpenFaaS function using java8 template.</description>
-	<url>https://github.com/kameshchauhan/openfaas-dependency</url>
+	<url>http://github.com/kameshchauhan/openfaas-dependency</url>
 
 	<licenses>
 		<license>
@@ -38,7 +38,7 @@
 			<name>OpenFaaS Contributors</name>
 			<organization>OpenFaaS</organization>
 			<email />
-			<url>https://github.com/openfaas/templates/graphs/contributors</url>
+			<url>http://github.com/openfaas/templates/graphs/contributors</url>
 			<roles>
 				<role>developers</role>
 			</roles>
@@ -48,17 +48,17 @@
 	<scm>
 		<connection>scm:git:ssh://git@github.com/kameshchauhan/openfaas-dependency.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/kameshchauhan/openfaas-dependency.git</developerConnection>
-		<url>https://github.com/kameshchauhan/openfaas-dependency</url>
+		<url>http://github.com/kameshchauhan/openfaas-dependency</url>
 		<tag>openfaas-dependency-1.0.0</tag>
 	</scm>
 
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com/kameshchauhan/openfaas-dependency/issues</url>
+		<url>http://github.com/kameshchauhan/openfaas-dependency/issues</url>
 	</issueManagement>
 
 	<distributionManagement>
-		<downloadUrl>https://github.com/kameshchauhan/openfaas-dependency/wiki/Download-and-Install</downloadUrl>
+		<downloadUrl>http://github.com/kameshchauhan/openfaas-dependency/wiki/Download-and-Install</downloadUrl>
 
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -73,7 +73,7 @@
 		</repository>
 		<site>
 			<id>kameshchauhan.openfaas</id>
-			<url>https://github.com/kameshchauhan/openfaas-dependency/wiki</url>
+			<url>http://github.com/kameshchauhan/openfaas-dependency/wiki</url>
 		</site>
 	</distributionManagement>
 
