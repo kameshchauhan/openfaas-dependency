@@ -4,7 +4,7 @@
 
 	<groupId>com.github.kameshchauhan.openfaas</groupId>
 	<artifactId>openfaas-dependency</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>${project.groupId}:${project.artifactId}</name>
@@ -44,19 +44,19 @@
 	</contributors>
 
 	<scm>
-		<connection>scm:git:https://github.com/kameshchauhan/templates.git</connection>
-		<developerConnection>scm:git:git@github.com:kameshchauhan/templates.git</developerConnection>
-		<url>https://github.com/kameshchauhan/templates</url>
+		<connection>scm:git:ssh://git@github.com/kameshchauhan/openfaas-dependency.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/kameshchauhan/openfaas-dependency.git</developerConnection>
+		<url>https://github.com/kameshchauhan/openfaas-dependency</url>
 		<tag>openfaas-dependency-1.0.3</tag>
 	</scm>
 
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com/kameshchauhan/templates/issues</url>
+		<url>https://github.com/kameshchauhan/openfaas-dependency/issues</url>
 	</issueManagement>
 
 	<distributionManagement>
-		<downloadUrl>https://github.com/kameshchauhan/templates/wiki/Download-and-Install</downloadUrl>
+		<downloadUrl>https://github.com/kameshchauhan/openfaas-dependency/wiki/Download-and-Install</downloadUrl>
 
 		<snapshotRepository>
 			<id>ossrh</id>
