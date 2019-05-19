@@ -4,7 +4,7 @@
 
 	<groupId>com.github.kameshchauhan.openfaas</groupId>
 	<artifactId>openfaas-dependency</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.3</version>
 	<packaging>pom</packaging>
 
 	<name>${project.groupId}:${project.artifactId}</name>
@@ -47,7 +47,7 @@
 		<connection>scm:git:https://github.com/kameshchauhan/templates.git</connection>
 		<developerConnection>scm:git:git@github.com:kameshchauhan/templates.git</developerConnection>
 		<url>https://github.com/kameshchauhan/templates</url>
-		<tag>openfaas-dependency-1.0.0</tag>
+		<tag>openfaas-dependency-1.0.3</tag>
 	</scm>
 
 	<issueManagement>
