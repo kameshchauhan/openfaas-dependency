@@ -70,8 +70,8 @@
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 		<site>
-			<id>com.openfaas.template</id>
-			<url>https://github.com/kameshchauhan/templates/wiki</url>
+			<id>kameshchauhan.openfaas</id>
+			<url>https://github.com/kameshchauhan/openfaas-dependency/wiki</url>
 		</site>
 	</distributionManagement>
 
