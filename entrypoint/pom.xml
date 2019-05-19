@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>com.github.kameshchauhan.openfaas</groupId>
 		<artifactId>openfaas-dependency</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../</relativePath>
 	</parent>
 
 	<groupId>com.github.kameshchauhan.openfaas</groupId>
 	<artifactId>entrypoint</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>${project.groupId}:${project.artifactId}</name>
@@ -54,7 +54,7 @@
 		<connection>scm:git:ssh://git@github.com/kameshchauhan/openfaas-dependency.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/kameshchauhan/openfaas-dependency.git</developerConnection>
 		<url>https://github.com/kameshchauhan/openfaas-dependency</url>
-		<tag>openfaas-dependency-1.0.0</tag>
+		<tag>openfaas-dependency-1.0.3</tag>
 	</scm>
 
 	<issueManagement>
@@ -95,7 +95,7 @@
 		<dependency>
 			<groupId>com.github.kameshchauhan.openfaas</groupId>
 			<artifactId>model</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.kameshchauhan.openfaas</groupId>
