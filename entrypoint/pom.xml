@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>entrypoint</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>${project.groupId}:${project.artifactId}</name>
@@ -53,7 +53,7 @@
 		<connection>scm:git:ssh://git@github.com/kameshchauhan/openfaas-dependency.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/kameshchauhan/openfaas-dependency.git</developerConnection>
 		<url>http://github.com/kameshchauhan/openfaas-dependency</url>
-		<tag>entrypoint-1.0.1</tag>
+		<tag>openfaas-dependency-1.0.0</tag>
 	</scm>
 
 	<issueManagement>
