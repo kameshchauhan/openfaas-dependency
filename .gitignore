@@ -31,3 +31,7 @@ model/target/
 \.idea/
 
 entrypoint/target/
+
+pom.xml.versionsBackup
+
+target/
