@@ -17,24 +17,27 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.util.HashMap;
 import java.util.Map;
 
 public class App {
 
-    public App() throws IOException {
-        createServer();
+    public App(String hanldeName) throws IOException {
+        createServer(hanldeName);
     }
 
     public static void main(String[] args) throws Exception {
-        createServer();
+        createServer(args[1]);
     }
 
-    private static void createServer() throws IOException {
+    private static void createServer(String handlerName) throws IOException {
         int port = 8082;
 
-        IHandler handler = new com.github.kameshchauhan.openfaas.function.Handler();
+//        IHandler handler = new com.github.kameshchauhan.openfaas.function.Handler();
+        IHandler handler = (IHandler) invokeClassMethod(handlerName,"dummy");
 
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         InvokeHandler invokeHandler = new InvokeHandler(handler);
@@ -43,7 +46,34 @@ public class App {
         server.setExecutor(null); // creates a default executor
         server.start();
     }
+    private static Object invokeClassMethod(String classBinName, String methodName){
+        Object myClassObject = null;
+        try {
 
+            // Create a new JavaClassLoader
+            ClassLoader classLoader = com.github.kameshchauhan.openfaas.entrypoint.App.class.getClassLoader();
+
+            // Load the target class using its binary name
+            Class loadedMyClass = classLoader.loadClass(classBinName);
+
+            System.out.println("Loaded class name: " + loadedMyClass.getName());
+
+            // Create a new instance from the loaded class
+            Constructor constructor = loadedMyClass.getConstructor();
+            myClassObject = constructor.newInstance();
+
+            // Getting the target method from the loaded class and invoke it using its name
+//            Method method = loadedMyClass.getMethod(methodName);
+//            System.out.println("Invoked method name: " + method.getName());
+//            method.invoke(myClassObject);
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return myClassObject;
+    }
     static class InvokeHandler implements HttpHandler {
         IHandler handler;
 

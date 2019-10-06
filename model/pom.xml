@@ -9,7 +9,6 @@
 		<relativePath>../</relativePath>
 	</parent>
 
-	<groupId>com.github.kameshchauhan.openfaas</groupId>
 	<artifactId>model</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
