@@ -35,3 +35,7 @@ entrypoint/target/
 pom.xml.versionsBackup
 
 target/
+
+entrypoint/pom.xml.releaseBackup
+
+entrypoint/release.properties

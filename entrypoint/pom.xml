@@ -92,11 +92,6 @@
 			<artifactId>model</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>com.github.kameshchauhan.openfaas</groupId>-->
-<!--			<artifactId>function</artifactId>-->
-<!--			<version>1.0.0</version>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -124,6 +119,7 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
+							<classpath></classpath>
 							<mode>development</mode>
 						</manifestEntries>
 					</archive>

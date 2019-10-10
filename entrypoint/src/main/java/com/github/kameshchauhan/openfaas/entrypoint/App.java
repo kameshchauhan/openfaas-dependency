@@ -3,7 +3,6 @@
 
 package com.github.kameshchauhan.openfaas.entrypoint;
 
-
 import com.github.kameshchauhan.openfaas.model.IHandler;
 import com.github.kameshchauhan.openfaas.model.IRequest;
 import com.github.kameshchauhan.openfaas.model.IResponse;
@@ -18,27 +17,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.util.HashMap;
 import java.util.Map;
 
 public class App {
 
-    public App(String hanldeName) throws IOException {
-        createServer(hanldeName);
+    public App(String handlerName) throws IOException {
+        createServer(handlerName);
     }
 
     public static void main(String[] args) throws Exception {
-        createServer(args[1]);
+        createServer(args[0]);
     }
 
     private static void createServer(String handlerName) throws IOException {
         int port = 8082;
 
-//        IHandler handler = new com.github.kameshchauhan.openfaas.function.Handler();
-        IHandler handler = (IHandler) invokeClassMethod(handlerName,"dummy");
-
+        IHandler handler = (IHandler) loadTheFunctionHandler(handlerName);
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         InvokeHandler invokeHandler = new InvokeHandler(handler);
 
@@ -46,27 +42,17 @@ public class App {
         server.setExecutor(null); // creates a default executor
         server.start();
     }
-    private static Object invokeClassMethod(String classBinName, String methodName){
+    private static Object loadTheFunctionHandler(String classBinName){
         Object myClassObject = null;
         try {
-
             // Create a new JavaClassLoader
             ClassLoader classLoader = com.github.kameshchauhan.openfaas.entrypoint.App.class.getClassLoader();
-
             // Load the target class using its binary name
             Class loadedMyClass = classLoader.loadClass(classBinName);
-
-            System.out.println("Loaded class name: " + loadedMyClass.getName());
-
+            System.out.println("Running Handler: " + loadedMyClass.getName());
             // Create a new instance from the loaded class
             Constructor constructor = loadedMyClass.getConstructor();
             myClassObject = constructor.newInstance();
-
-            // Getting the target method from the loaded class and invoke it using its name
-//            Method method = loadedMyClass.getMethod(methodName);
-//            System.out.println("Invoked method name: " + method.getName());
-//            method.invoke(myClassObject);
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -108,10 +94,6 @@ public class App {
                     reqHeadersMap.put(header.getKey(), headerValues.get(0));
                 }
             }
-
-            // for(Map.Entry<String, String> entry : reqHeadersMap.entrySet()) {
-            //     System.out.println("Req header " + entry.getKey() + " " + entry.getValue());
-            // }
 
             IRequest req = new Request(requestBody, reqHeadersMap,t.getRequestURI().getRawQuery(), t.getRequestURI().getPath());
             
